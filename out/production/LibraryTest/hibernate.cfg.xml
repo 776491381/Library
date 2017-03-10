@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:mysql://localhost:3306/Library</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">fyy7764</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="format_sql">true</property>
+        <!--<property name="show_sql">true</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+
+
+
+        <mapping class="library.entity.StudentEntity"/>
+        <mapping resource="library/entity/StudentEntity.hbm.xml"/>
+        <mapping class="library.entity.BookEntity"/>
+        <mapping resource="library/entity/BookEntity.hbm.xml"/>
+        <mapping class="library.entity.LendEntity"/>
+        <mapping resource="library/entity/LendEntity.hbm.xml"/>
+        <mapping class="library.entity.AppointmentEntity"/>
+        <mapping resource="library/entity/AppointmentEntity.hbm.xml"/>
+
+
+        <!--
+         <property name="hbm2ddl.auto">create</property>
+        <property name="javax.persistence.validation.mode">none</property>
+        <property name="connection.pool_size">1</property>
+        -->
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

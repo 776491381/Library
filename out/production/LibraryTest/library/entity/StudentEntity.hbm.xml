@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="library.entity.StudentEntity" table="Student" schema="Library">
+        <id name="sid" column="sid"/>
+        <property name="sname" column="sname"/>
+        <property name="sclass" column="sclass"/>
+        <property name="scollege" column="scollege"/>
+
+
+        <set name="lendbooks" table = "lend">
+            <key column="sid"></key>
+            <one-to-many class="library.entity.LendEntity"></one-to-many>
+        </set>
+        <set name="orderbooks" table = "appointment">
+            <key column="sid"></key>
+            <one-to-many class="library.entity.AppointmentEntity"></one-to-many>
+        </set>
+
+    </class>
+
+
+
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="library.entity.BookEntity" table="book" schema="Library">
+        <id name="bid" column="bid"/>
+        <property name="bname" column="bname"/>
+        <property name="blent" column="blent"/>
+        <property name="bpress" column="bpress"/>
+        <property name="bauthor" column="bauthor"/>
+
+        <!--<many-to-one name="lendbooks" class="library.entity.LendEntity"  column="bid" unique="true"></many-to-one>-->
+
+
+    </class>
+</hibernate-mapping>

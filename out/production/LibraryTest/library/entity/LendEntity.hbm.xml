@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="library.entity.LendEntity" table="lend" schema="Library">
+        <id name="lid" column="lid" type="java.lang.String">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="ldate" column="ldate"/>
+        <property name="rdate" column="rdate"/>
+
+        <many-to-one name="books" class="library.entity.BookEntity"  column="bid" unique="true"></many-to-one>
+
+
+
+
+    </class>
+
+</hibernate-mapping>
